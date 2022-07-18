@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+    <meta charset="UTD-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Muñeca</title>
+	<style type="text/css">
+			
+		* {
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background-color: rgb(116, 163, 217);
+		}
+			
+		#header {
+            background-color: aqua;
+			margin:0 auto;
+			width:500px;
+            padding: auto;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+
+        #header2{
+            background-color:rgb(116, 163, 217);
+            padding: auto;
+			text-align: end;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+		.icono{
+            text-align: end;
+            margin: 0 0px;
+        }
+        .icono >li{
+			background-color: black;
+			color: white;
+            margin: 0 0px;
+        }
+
+		#header3{
+			background-color: rgb(142, 231, 134);
+			margin:0% auto;
+			width: 1000px;
+			text-align: center;
+			font-family:'Times New Roman', Times, serif;
+		}
+		ul, ol {
+			list-style:none;
+		}
+			
+		.nav {
+			width:500px; /*Le establecemos un ancho*/
+			margin:0 auto; /*Centramos automaticamente*/
+		}
+
+		.nav > li {
+			float:left;
+		}
+			
+		.nav li a {
+			background-color:#000;
+			color:#fff;
+			text-decoration:none;
+			padding:15px 12px;
+			display:block;
+		}
+		
+		.nav li a:hover {
+			background-color:#434343;
+		}
+			
+		.nav li ul {
+			display:none;
+			position:absolute;
+			min-width:200px;
+		}
+			
+		.nav li:hover > ul {
+			display:block;
+		}
+			
+		.nav li ul li {
+			position:relative;
+		}
+			
+		.nav li ul li ul {
+			right:-140px;
+			top:0px;
+		}	
+		.letra1{
+			text-align: start;
+		}
+	</style>
+</head>
+<body style="background-image: url('/static/fondo1.jpg')">
+	<div id="header">
+		<nav> 
+			<ul class="nav">
+				<li><a href="/menu-m">Inicio</a></li>
+				<li><a href="/menu-m">Día de recuperacion</a>
+					<ul>
+						<li><a href="/recu_dia1m">Día 1</a></li>
+						<li><a href="/recu_dia2m">Día 2</a></li>
+						<li><a href="/recu_dia3m">Día 3</a></li>
+						<li><a href="/recu_dia4m">Día 4</a></li>
+                        <li><a href="/recu_dia5m">Día 5</a></li>
+                        <li><a href="/recu_dia6m">Día 6</a></li>
+                        <li><a href="/recu_dia7m">Día 7</a></li>
+					</ul>
+				</li>
+				<li><a href="/menu-m">Sube tu recuperacion</a>
+					<ul>
+						<li><a href="/sube_dia1m">Día 1</a></li>
+						<li><a href="/sube_dia2m">Día 2</a></li>
+						<li><a href="/sube_dia3m">Día 3</a></li>
+						<li><a href="/sube_dia4m">Día 4</a></li>
+						<li><a href="/sube_dia5m">Día 5</a></li>
+                        <li><a href="/sube_dia6m">Día 6</a></li>
+                        <li><a href="/sube_dia7m">Día 7</a></li>
+					</ul>
+				</li>
+				<li><a href="/contacto_m">Contacto</a></li>
+			</ul>
+		</nav>
+	</div>
+    <div id="header2">
+		<ul class="icono">
+			<li><h1>Hola, {{usuario}}</h1></li>
+			<li><a href="/login"><input type="button" value="CERRAR SESION" style="background-color: rgb(164, 41, 19); color: white;" ></a></li>
+		</ul>
+	</div>
+	<div id="header3">
+		</br></br>
+        <p><h1>¡COMPARTENOS TU PROCESO DEL DÍA 4! </h1></p></br></br>
+
+        <p><h2 class="letra1">Tu video puede tardar en subir dependiendo de su tamaño, por favor selecciona tu archivo y da clic en enviar archivo. </br> </br>Te saldra "ARCHIVO SUBIDO EXITOSAMENTE" en la pantalla de inicio cuando se haya subido correctamente.</h2></p></br></br>
+		
+        <p><h2>Sube un archivo:</h2></p></br>
+		
+        <form action="/uploadt" method="POST" enctype="multipart/form-data">
+            <input type="file" name="archivo">
+			</br>
+            <p><input type="submit" value="Enviar archivo"></p>
+    
+        </form>
+		</br></br>
+		<p><img src="/static/gif.gif" alt="Funny image" width="180px" height="180px"></p>
+	</div>
+</body>
+</html>

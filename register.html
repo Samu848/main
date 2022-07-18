@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTD-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <style>
+        body{
+            background-image: url("/static/Fondo.png");
+            background-size: 10rem;
+        }
+        #CajaRegister{
+            background-color: rgb(219, 185, 135);
+            border-style: double;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 5px 5px 5px grey;
+            margin: 8% auto;
+        }
+        #CajaLesiones{
+            background-color: rgb(219, 185, 135);
+            border-style:dashed;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 5px 5px 5px grey;
+            margin: 5% auto;
+        }
+        #CajaElement{
+            background-color: rgb(219, 185, 135);
+            padding: 10px;
+            width: 275px;
+            text-align: start;
+            margin: 0% auto;
+        }
+        .Botones{
+            background-color:rgb(219, 185, 135);
+            text-align: center;
+            margin: 0 5px;
+        }
+        .Botones >li{
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .lesiones{
+            background-color:rgb(219, 185, 135);
+            text-align: center;
+            margin: 6px 8px;
+        }
+        .lesiones >li{
+            display: inline-block;
+            margin: 2px 5px;
+        }
+        .grados{
+            background-color:rgb(219, 185, 135);
+            text-align: center;
+            margin: 4px 8px;
+        }
+        .grados >li{
+
+            display: inline-block;
+            margin: 2px 5px;
+        }
+        .letra1{
+            font-size: 20px;
+            font-weight: bloder;
+            font-family: courier;
+        }
+        .letra2{
+            font-size: 14px;
+            font-family: Verdana;
+        }
+        .letra3{
+            font-size: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .letra4{
+            font-size: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+    <script>
+        function registrar(){
+            //alert("ingreso")
+            lesion = "";
+            grado = "";
+            if (document.getElementById('Grado 1').checked){
+                grado = "Grado 1";
+            }
+            if (document.getElementById('Grado 2').checked){
+                grado = "Grado 2";
+            }
+            if (document.getElementById('Grado 3').checked){
+                grado = "Grado 3";
+            }
+            if (document.getElementById('Rodilla').checked){
+                lesion = "Rodilla";
+            }
+            if (document.getElementById('Tobillo').checked){
+                lesion = "Tobillo";
+            }
+            if (document.getElementById('Muneca').checked){
+                lesion = "Muneca";
+            }
+            usuario = document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            correo = document.getElementById('correo').value;
+            console.log(usuario);
+            console.log(password);
+            if (usuario == ""){
+                alert("Debe ingresar un usuario");
+            }
+            if (password == ""){
+                alert("Debe ingresar una contraseña");
+            }
+            if (correo == ""){
+                alert("Debe ingresar un correo");
+            }
+            if ((lesion == "" )){
+                alert("Debe ingresar alguna lesion");
+            }
+            if (grado == ""){
+                alert("Debe ingresar algun grado de lesion");
+            }
+            if((usuario != "")&&(password != "")){
+                document.getElementById('formRegister').submit();
+                document.getElementById('lesion').submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/registrar" method="post" id="formRegister">
+    <div id="CajaRegister">
+        <p><h1>{{mensaje}}</h1></p>
+        <p class="letra1">Crea tu Cuenta</p>
+        <div id="CajaElement">
+            <p class="letra2">Usuario: <input type="text" placeholder="USUARIO" id="usuario" name="usuario"></p>
+            <p class="letra2">Contraseña: <input type="password" placeholder="PASSWORD" id="password" name="password"></p> 
+            <p class="letra2">Correo:<input type="text" placeholder="CORREO" id="correo" name="correo"></p>
+        </div>
+        <div id="CajaLesiones">
+            <label class="letra4">Lesion</label>
+            <ul class="lesiones">    
+                <li class="letra3"><input type="radio" name="lesion" value="Rodilla" id="Rodilla"><label for="Rodilla">Rodilla</label></li>
+                <li class="letra3"><input type="radio" name="lesion" value="Tobillo" id="Tobillo"><label for="Tobillo">Tobillo</label></li>
+                <li class="letra3"><input type="radio" name="lesion" value="Muneca" id="Muneca"><label for="Muneca">Muñeca</label></li>
+            </ul>
+            <label class="letra4">Grado</label>
+            <ul class="grados">
+                <li class="letra3"><input type="radio" name="grado" value="Grado 1" id="Grado 1"><label for="Grado 1">Grado 1</label></li>
+                <li class="letra3"><input type="radio" name="grado" value="Grado 2" id="Grado 2"><label for="Grado 2">Grado 2</label></li>
+                <li class="letra3"><input type="radio" name="grado" value="Grado 3" id="Grado 3"><label for="Grado 3">Grado 3</label></li>
+            </ul>
+        </div>
+        <ul class="Botones">
+            <li><input type="button" value="CREAR" name="CREAR" onclick="registrar()"></li>
+            <li><a href="/login">
+                <input type="button" value="ATRAS"></a>
+            </li>
+        </ul>
+    </div>
+    </form>
+</body>
+</html>

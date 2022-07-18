@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+    <meta charset="UTD-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Tobillo</title>
+	<style type="text/css">
+			
+		* {
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background-color: rgb(116, 163, 217);
+		}
+			
+		#header {
+            background-color: aqua;
+			margin:0 auto;
+			width:500px;
+            padding: auto;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+
+        #header2{
+            background-color:rgb(116, 163, 217);
+            padding: auto;
+			text-align: end;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+		.icono{
+            text-align: end;
+            margin: 0 0px;
+        }
+        .icono >li{
+			background-color: black;
+			color: white;
+            margin: 0 0px;
+        }
+
+		#header3{
+			background-color: rgb(84, 111, 169);
+			margin:0% auto;
+			width: 1000px;
+			text-align: center;
+			font-family:'Times New Roman', Times, serif;
+		}
+		#header4{
+			background-color:rgb(214, 185, 112);
+			color: black;
+			text-align: start;
+		}
+		#header5{
+			padding: 0%;
+			background-color:rgb(214, 185, 112);
+			color: black;
+			text-align: start;
+			width: 50px;
+			height: 0px;
+		}
+		#header6{
+			background-color:rgb(214, 185, 112);
+			color: black;
+			width: 800px;
+			text-align: end;
+			margin: 0 15%;
+		}
+		ul, ol {
+			list-style:none;
+		}
+			
+		.nav {
+			width:500px; /*Le establecemos un ancho*/
+			margin:0 auto; /*Centramos automaticamente*/
+		}
+
+		.nav > li {
+			float:left;
+		}
+			
+		.nav li a {
+			background-color:#000;
+			color:#fff;
+			text-decoration:none;
+			padding:15px 12px;
+			display:block;
+		}
+		
+		.nav li a:hover {
+			background-color:#434343;
+		}
+			
+		.nav li ul {
+			display:none;
+			position:absolute;
+			min-width:200px;
+		}
+			
+		.nav li:hover > ul {
+			display:block;
+		}
+			
+		.nav li ul li {
+			position:relative;
+		}
+			
+		.nav li ul li ul {
+			right:-140px;
+			top:0px;
+		}	
+	</style>
+</head>
+<body style="background-image: url('/static/fondo1.jpg')">
+	<div id="header">
+		<nav> 
+			<ul class="nav">
+				<li><a href="/menu-t">Inicio</a></li>
+				<li><a href="/menu-t">Día de recuperacion</a>
+					<ul>
+						<li><a href="/recu_dia1t">Día 1</a></li>
+						<li><a href="/recu_dia2t">Día 2</a></li>
+						<li><a href="/recu_dia3t">Día 3</a></li>
+						<li><a href="/recu_dia4t">Día 4</a></li>
+                        <li><a href="/recu_dia5t">Día 5</a></li>
+                        <li><a href="/recu_dia6t">Día 6</a></li>
+                        <li><a href="/recu_dia7t">Día 7</a></li>
+					</ul>
+				</li>
+				<li><a href="/menu-t">Sube tu recuperacion</a>
+					<ul>
+						<li><a href="/sube_dia1t">Día 1</a></li>
+						<li><a href="/sube_dia2t">Día 2</a></li>
+						<li><a href="/sube_dia3t">Día 3</a></li>
+						<li><a href="/sube_dia4t">Día 4</a></li>
+						<li><a href="/sube_dia5t">Día 5</a></li>
+                        <li><a href="/sube_dia6t">Día 6</a></li>
+                        <li><a href="/sube_dia7t">Día 7</a></li>
+					</ul>
+				</li>
+				<li><a href="/contacto_t">Contacto</a></li>
+			</ul>
+		</nav>
+	</div>
+    <div id="header2">
+		<ul class="icono">
+			<li><h1>Hola, {{usuario}}</h1></li>
+			<li><a href="/login"><input type="button" value="CERRAR SESION" style="background-color: rgb(164, 41, 19); color: white;" ></a></li>
+		</ul>
+	</div>
+	<div id="header3">
+		<p><h1>BIENVENIDO(A) {{usuario}}</h1></p></br>
+		<img src="{{ url_for('static',filename = 'fig1-removebg-preview.png')}}" width="180px" height="220px">
+		<p><h2>ESTÁS EN EL DÍA {{dia}} DE TU RECUPERACIÓN</h2></p></br>
+		<p><h1>{{mensaje}}</h1></p>
+		<div id="header4">
+			<div id="header5">
+				<p><img src="/static/imag.png" alt="Funny image" width="180px" height="350px"></p>
+			</div>
+			<div id="header6">
+			<p><h2>TIP DEL DÍA</h2></p></br></br></br>
+			<p><h3>Reduce el consumo de sal y de azúcar:</h3></p></br>
+			<p><h3>Ambas sustancias se encuentran en exceso en los alimentos ultraprocesados, así que evítalos, pues incrementan de forma considerable el riesgo de enfermedades cardiovasculares y metabólicas.</h3></p></br></br></br>
+			</div>
+		</div>
+		<p><h2>Por favor, no dejes de alimentarte correctamente e hidratarte</h2></p>
+	</div>
+</body>
+</html>

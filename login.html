@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTD-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar</title>
+    <style>
+        body{
+            background-image: url("/static/Fondo.png");
+            background-size: 10rem;
+        }
+        #CajaLogin{
+            background-color: rgb(127, 133, 187);
+            border-style: double;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 5px 5px 5px grey;
+            margin: 15% auto;
+        }
+        .letra1{
+            font-size: 20px;
+            font-weight: bloder;
+            font-family: courier;
+        }
+        .letra2{
+            font-size: 14px;
+            font-family: Verdana;
+        }
+    </style>
+    <script>
+        function validar(){
+            //alert("ingreso")
+            usuario = document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            console.log(usuario);
+            console.log(password);
+            if (usuario == ""){
+                alert("Debe ingresar un usuario");
+            }
+            if (password == ""){
+                alert("Debe ingresar una contraseña");
+            }
+            if((usuario != "")&&(password != "")){
+                document.getElementById('formLogin').submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/validar" method="post" id="formLogin">
+    <div id="CajaLogin"> 
+        <p class="letra1">BIENVENIDO AL SISTEMA</p>
+        <p><h2>{{err}}</h2></p>
+        <p><h2>{{avis}}</h2></p>
+        <p class="letra2">Usuario: <input type="text" placeholder="usuario" id="usuario" name="usuario"></p>
+        <p class="letra2">Contraseña: <input type="password" placeholder="password" id="password" name="password"></p>
+        <p><input type="button" value="Ingresar" onclick="validar()"></p>
+        <p><a href="http://127.0.0.1:5000/register">Crear Cuenta</a></p>
+    </div>
+    </form>
+</body>
+</html>
